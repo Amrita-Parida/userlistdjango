@@ -16,7 +16,9 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         total = kwargs['total']
         for i in range(total):
-            user = MyUser.objects.create(user_name=randomword(), password='123')
+            user = MyUser.objects.create(user_name=randomword())
+            user.set_password('123')
+            user.save()
             ActivityPeriod.objects.create(user=user,start_time=datetime.today(),
                                                     end_time=datetime.today() + timedelta(minutes= 60))
             print(user)

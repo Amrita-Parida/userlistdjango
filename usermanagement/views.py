@@ -11,4 +11,4 @@ class UserListView(viewsets.ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         serializer = UserListSerializer(self.queryset, many=True)
-        return Response({"members":serializer.data})
+        return Response({"members":serializer.data,"ok":True})

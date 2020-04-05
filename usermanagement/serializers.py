@@ -1,7 +1,5 @@
 from rest_framework import serializers
-from datetime import datetime
 from rest_framework.serializers import SerializerMethodField
-from rest_framework.response import Response
 from .models import *
 
 
@@ -20,10 +18,8 @@ class ActivityPeriodSerializer(serializers.ModelSerializer):
         fields=('start_time','end_time')
 
 class UserListSerializer(serializers.ModelSerializer):
-    """merchant bank details for CRUD operations"""
+    """User List Serializer get the list"""
     activity_periods = ActivityPeriodSerializer(source='user_activity',many=True)
-    # r_bank_name = serializers.CharField(source='bank_name.name', read_only=True)
-    # r_passbook = SerializerMethodField(read_only=True)
 
     class Meta:
         model = MyUser
