@@ -1,14 +1,8 @@
 /env
-/assets
 /db.json
 __pycache__
-media
 *.pyc
 *.log
 .idea/
 .DS_Store
-googleauthqr
 .vscode
-.tempimage/
-.log/
-torrent.sql
