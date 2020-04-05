@@ -1,7 +1,6 @@
 /env
 /assets
 /db.json
-/db.sqlite3
 __pycache__
 media
 *.pyc
